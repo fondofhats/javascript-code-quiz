@@ -118,8 +118,6 @@ var quizUpdate = function(answerCopy) {
 
 
 
-
-
 var onlyDisplaySection = function(element) {
     var thisElement = getAnElement(element);
     hideAllSections();
