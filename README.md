@@ -36,7 +36,7 @@ Javascript Challenge for UCF Bootcamp week 4
 The remote site is used for display and hosted on GitHub Pages
 
 ##### The remote site is located here:
-*Home Page*<br>[https://github.com/fondofhats/javascript-code-quiz/](https://github.com/fondofhats/javascript-code-quiz/)
+*Home Page*<br>[https://fondofhats.github.io/javascript-code-quiz/](https://fondofhats.github.io/javascript-code-quiz/)
 
 ### Screenshot
 
