@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
