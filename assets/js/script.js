@@ -1,6 +1,6 @@
 const initialTime = 75;
 var highScoresArr = [];
-var time = 75;
+var time = initialTime;
 var score = 0;
 var qCount = 0;
 var timeset;
@@ -12,7 +12,6 @@ var quizholderEl = document.querySelector("#quizHolder");
 var questionHolderEl = document.querySelector("#questionHolder");
 var highScoreHolder = document.querySelector("#highScoreHolder");
 var recordsEl = document.querySelector("#records");
-
 var answers = document.querySelectorAll("#questionHolder button");
 
 
@@ -117,6 +116,7 @@ var recordsButtonHandler = function (e) {
       //Sends value to local storage for later use.
       localStorage.setItem("highScores", JSON.stringify(highScoresArr));
       getAnElement("#highScores div").innerHTML = "";
+      getAnElement("#score").innerHTML = "";
       onlyDisplaySection("#highScores");
       recordsHtmlReset();
       getAnElement("#initials").value = "";
@@ -124,8 +124,11 @@ var recordsButtonHandler = function (e) {
   }
 };
 
+/* Clears highscores from the html, array and localstorage */
 var clearScoresButtonHandler = function () {
-  console.log("CLEAR BUTTON");
+    highScoresArr = [];
+    getAnElement("#highScores div").innerHTML = "";
+    localStorage.removeItem("highScores");
 };
 
 var onlyDisplaySection = function (element) {
@@ -193,10 +196,6 @@ function hideAllSections() {
   }
 }
 function loadHighScores() {
-  /*     let recordsArray = [];
-	// Retrieve data if it exists or keep empty array otherwise.
-	(localStorage.getItem('recordsArray')) ? recordsArray = JSON.parse(localStorage.getItem('recordsArray')): recordsArray = []; */
-
   var highScores = localStorage.getItem("highScores");
   if (!highScores) {
     highScoresArr = [];
@@ -239,5 +238,4 @@ quizholderEl.addEventListener("click", quizanswerButtonHandler);
 recordsEl.addEventListener("click", recordsButtonHandler);
 getAnElement("#clearScores").addEventListener("click",clearScoresButtonHandler);
 
-//CreateTestScores();
 loadHighScores();
