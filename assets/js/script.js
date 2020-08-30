@@ -14,6 +14,7 @@ var startEl = document.querySelector("#intro button");
 var quizholderEl = document.querySelector("#quizHolder");
 var questionHolderEl = document.querySelector("#questionHolder");
 var scoreEl = document.querySelector("#score");
+var recordsEl = document.querySelector("#records");
 
 
 var answers = document.querySelectorAll("#questionHolder button");
@@ -40,7 +41,7 @@ var highScoreButtonHandler = function(event) {
 
     if(targetEl.matches("#scores")){
         event.preventDefault();
-        /* clearInterval(clock); */
+        clearInterval(clock);
         timeEl.innerHTML=0;
 		time = initialTime;
 		score = 0;
@@ -55,6 +56,7 @@ var resetButtonHandler = function(event) {
     time = initialTime;
     score = 0;
     qCount = 0;
+    removeLastQuestions();
     onlyDisplaySection("#intro");
 
 };
@@ -200,6 +202,7 @@ viewHighSoreEl.addEventListener("click",highScoreButtonHandler);
 resetEl.addEventListener("click", resetButtonHandler);
 startEl.addEventListener("click", startQuizButtonHandler);
 quizholderEl.addEventListener("click", quizanswerButtonHandler);
+recordsEl.addEventListener("click", recordsButtonHandler);
 
-CreateTestScores();
+//CreateTestScores();
 loadHighScores();
